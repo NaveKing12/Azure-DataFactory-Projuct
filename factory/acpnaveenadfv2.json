@@ -1,0 +1,15 @@
+{
+	"name": "acpnaveenadfv2",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e8e4bbfd-f369-4b0b-afca-26a00b383b32",
+		"tenantId": "07de6f8b-2f8e-445a-9c28-007caaa901ec"
+	}
+}

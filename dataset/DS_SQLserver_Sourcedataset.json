@@ -1,0 +1,31 @@
+{
+	"name": "DS_SQLserver_Sourcedataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_OnpremiseSQLserver",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sourceschema": {
+				"type": "string"
+			},
+			"sourcetable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().sourceschema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().sourcetable",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

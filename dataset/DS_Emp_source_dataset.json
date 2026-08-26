@@ -1,0 +1,32 @@
+{
+	"name": "DS_Emp_source_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLSgen2_Connection",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"pramdate": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "raw/emp/@{formatDateTime(dataset().pramdate,'yyyy')}/@{formatDateTime(dataset().pramdate,'MM')}/@{formatDateTime(dataset().pramdate,'dd')}",
+					"type": "Expression"
+				},
+				"fileSystem": "global"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

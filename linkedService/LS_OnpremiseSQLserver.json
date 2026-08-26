@@ -1,0 +1,28 @@
+{
+	"name": "LS_OnpremiseSQLserver",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "onpremisevm",
+			"database": "naveensqldb",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "NaveenA",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_ACP_KVconnection",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sqlserverpwd"
+			}
+		},
+		"connectVia": {
+			"referenceName": "naveenselfhostedir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

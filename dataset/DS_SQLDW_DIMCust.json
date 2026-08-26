@@ -1,0 +1,17 @@
+{
+	"name": "DS_SQLDW_DIMCust",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLDW",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dimcust"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

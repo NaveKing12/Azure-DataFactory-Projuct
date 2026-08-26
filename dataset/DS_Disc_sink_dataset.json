@@ -1,0 +1,32 @@
+{
+	"name": "DS_Disc_sink_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLSgen2_Connection",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sinkdate": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "processeddata/discounts/@{formatDateTime(dataset().sinkdate,'yyyy')}/@{formatDateTime(dataset().sinkdate,'MM')}/@{formatDateTime(dataset().sinkdate,'dd')}",
+					"type": "Expression"
+				},
+				"fileSystem": "global"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
